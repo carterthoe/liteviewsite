@@ -3,7 +3,7 @@ import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { DRACOLoader } from 'three/addons/loaders/DRACOLoader.js';
-import { calculateSatellitePosition, createOrbitPath, updateSatellitePosition, ISS_PARAMS } from './Sat_placer.jsx';
+import { calculateSatellitePosition, createOrbitPath, updateSatellitePosition, ISS_PARAMS } from './sat_placer.jsx';
 import { fetchSatelliteData } from './api.js';
 import React from 'react'
 
@@ -149,7 +149,7 @@ export default function SatelliteVisualizer() {
     // ---------- Load ISS ----------
     let ISS;
     loader.load(
-      '/ISSc.glb',
+      '/ISS.glb',
       (gltf) => {
         ISS = gltf.scene;
         ISS.position.set(0, 0, 0);
