@@ -1,6 +1,6 @@
 import { useAuth0 } from '@auth0/auth0-react';
 import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
-import Navbar from './navbar.jsx';
+import Navbar from './Navbar.jsx';
 import SatelliteVisualizer from './satellite_visualizer.jsx';
 import About from './about.jsx';
 import Features from './features.jsx';
