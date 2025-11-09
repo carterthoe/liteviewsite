@@ -149,7 +149,7 @@ export default function SatelliteVisualizer() {
     // ---------- Load ISS ----------
     let ISS;
     loader.load(
-      '/ISS.glb',
+      '/ISSc.glb',
       (gltf) => {
         ISS = gltf.scene;
         ISS.position.set(0, 0, 0);
