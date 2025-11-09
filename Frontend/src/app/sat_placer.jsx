@@ -37,7 +37,7 @@ export function calculateSatellitePosition(params) {
   
   // Calculate time elapsed since launch in minutes
   const elapsedMs = currentTime - launch;
-  let elapsedMinutes = (elapsedMs / (1000 * 60))+10;
+  let elapsedMinutes = (elapsedMs / (1000 * 60));
 
   
   // Calculate orbital parameters
@@ -178,8 +178,11 @@ export function updateSatellitePosition(satelliteObject, orbitalParams) {
   
   satelliteObject.position.set(position.x, position.y, position.z);
   
-  // Optional: Make satellite face Earth (origin)
-  satelliteObject.lookAt(0, 0, 0);
+  satelliteObject.lookAt(new THREE.Vector3(0, 0, 0));
+  satelliteObject.rotateY(Math.PI/-2); 
+
+
+  console.log(satelliteObject.position);
   
   return orbitalData;
 }
