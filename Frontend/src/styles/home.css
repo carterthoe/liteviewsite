@@ -1,0 +1,179 @@
+.home-container {
+  width: 100%;
+}
+
+/* Main Section */
+.main-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: calc(100vh - 60px);
+  padding: 60px 80px;
+  background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%);
+  color: white;
+  gap: 60px;
+}
+
+.main-content {
+  flex: 1;
+  max-width: 600px;
+}
+
+.main-title {
+  font-size: 3.5em;
+  font-weight: 700;
+  margin-bottom: 24px;
+  line-height: 1.2;
+}
+
+.highlight {
+  background: linear-gradient(45deg, #00d4ff, #0096ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.main-subtitle {
+  font-size: 1.25em;
+  color: #b0b8d4;
+  margin-bottom: 40px;
+  line-height: 1.6;
+}
+
+.explore-button {
+  background: linear-gradient(45deg, #00d4ff, #0096ff);
+  color: white;
+  border: none;
+  padding: 16px 48px;
+  font-size: 1.1em;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.explore-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
+}
+
+/* Orbit Animation */
+.main-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.orbit-animation {
+  position: relative;
+  width: 400px;
+  height: 400px;
+}
+
+.earth {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120px;
+  height: 120px;
+  background: linear-gradient(135deg, #0066cc, #004c99);
+  border-radius: 50%;
+  box-shadow: 0 0 60px rgba(0, 150, 255, 0.5);
+  animation: pulse 3s ease-in-out infinite;
+}
+
+.satellite {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  background: #00d4ff;
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.8);
+  animation: orbit 8s linear infinite;
+}
+
+@keyframes orbit {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg) translateX(150px) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg) translateX(150px) rotate(-360deg);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 0 60px rgba(0, 150, 255, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 80px rgba(0, 150, 255, 0.8);
+  }
+}
+
+/* CTA Section */
+.explore-section {
+  text-align: center;
+  padding: 100px 80px;
+  background: white;
+}
+
+.explore-section h2 {
+  font-size: 2.5em;
+  color: #1a1f3a;
+  margin-bottom: 16px;
+}
+
+.explore-section p {
+  font-size: 1.2em;
+  color: #666;
+  margin-bottom: 40px;
+}
+
+.explore-button-secondary {
+  background: #1a1f3a;
+  color: white;
+  border: none;
+  padding: 16px 48px;
+  font-size: 1.1em;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.explore-button-secondary:hover {
+  background: #0a0e27;
+  transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .main-section {
+    flex-direction: column;
+    padding: 40px 20px;
+    text-align: center;
+  }
+
+  .main-title {
+    font-size: 2.5em;
+  }
+
+  .orbit-animation {
+    width: 300px;
+    height: 300px;
+  }
+
+  .features-section,
+  .stats-section,
+  .explore-section {
+    padding: 60px 20px;
+  }
+
+  .section-title {
+    font-size: 2em;
+  }
+}

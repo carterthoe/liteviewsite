@@ -1,0 +1,34 @@
+[build-system]
+requires = [
+    "setuptools",
+    "wheel"
+]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "LiteView_Backend"
+version = "0.1.0"
+description = "Backend for our Tiger Hacks 2025 project"
+readme = "README.md"
+authors = [
+    {name = "Supreet Aradhya", email = "aradhyasupreet@gmail.com"},
+    {name = "Carter Thoe", email = "carterthoe@protonmail.com"},
+    {name = "Ashton Kuhn", email = "ashtonkuhn75@icloud.com"}
+]
+dependencies = [
+    "fastapi[standard]", 
+    "uvicorn[standard]",
+    "requests",
+    "python-dotenv",
+    "spacetrack",
+    "mysql-connector-python"
+]
+
+[project.optional-dependencies]
+test = [
+    "pytest",
+    "pytest-cov",
+]
+
+[tools.setuptools.packages.find]
+where = ["src"]
